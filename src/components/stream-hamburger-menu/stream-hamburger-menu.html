@@ -1,0 +1,101 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../stream-icons/stream-icons.html">
+<dom-module id="stream-hamburger-menu">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        height: 100%;
+        background-color: #191919;
+        overflow-y: scroll;
+        width: 264px;
+      }
+
+      #menuItems {
+        list-style: none;
+        padding: 0;
+      }
+
+      .header .icon {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 20px;
+        margin-right: 12px;
+      }
+
+      .header {
+        font-size: 22px;
+        color: #A3A3A3;
+        font-weight: 300;
+        margin: 35px 0 8px 0;
+
+      }
+
+      .nav-item {
+        font-size: 16px;
+        color: #A3A3A3;
+        font-weight: 400;
+        padding: 10px 60px;
+        margin: 4px 0;
+      }
+
+      .nav-item[active="true"] {
+        border-left: 2px #2B9CD8 solid;
+        color: #FFFFFF;
+        font-weight: 500;
+      }
+
+      .footer {
+        padding: 30px 20px;
+        margin-bottom: 10px;
+      }
+
+      .footer .logo {
+        height: 20px;
+        float: left;
+      }
+
+      .footer .icon {
+        height: 22px;
+        width: 22px;
+        float: right;
+      }
+    </style>
+    <ul id="menuItems">
+      <li class="header">
+        <iron-icon class="icon" icon="stream-icons:MenuIconSaved"></iron-icon>
+        Saved
+      </li>
+      <li class="nav-item" active="true" page="stream-for-you">For You</li>
+      <li class="nav-item" active="false" page="stream-for-you">Favorites</li>
+      <li class="nav-item" active="false" page="stream-for-you">Purchases</li>
+      <li class="nav-item" active="false" page="stream-for-you">Downloads</li>
+      <li class="header">
+        <iron-icon class="icon" icon="stream-icons:MenuIconLiveTV"></iron-icon>
+        Live TV
+      </li>
+      <li class="nav-item" active="false" page="stream-all-channels">All Channels</li>
+      <li class="nav-item" active="false" page="stream-all-channels">Favorite Channels</li>
+      <li class="nav-item" active="false" page="stream-all-channels">TV Go Channels</li>
+      <li class="header">
+        <iron-icon class="icon" icon="stream-icons:MenuIconBrowse"></iron-icon>
+        Browse
+      </li>
+      <li class="nav-item" active="false" page="stream-live-tv">TV</li>
+      <li class="nav-item" active="false" page="stream-live-tv">Movies</li>
+      <li class="nav-item" active="false" page="stream-live-tv">Newtorks</li>
+      <li class="nav-item" active="false" page="stream-live-tv">Sports</li>
+      <li class="nav-item" active="false" page="stream-live-tv">Kids</li>
+      <li class="nav-item" active="false" page="stream-live-tv">News</li>
+      <li class="nav-item" active="false" page="stream-live-tv">Latino</li>
+    </ul>
+    <div class="footer">
+      <img src="../../../images/logo-xfinity-stream.svg" class="logo">
+      <iron-icon class="icon" icon="stream-icons:MenuIconSettings"></iron-icon>
+    </div>
+  </template>
+  <script src="stream-hamburger-menu.js">
+  </script>
+</dom-module>

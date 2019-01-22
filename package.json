@@ -1,0 +1,25 @@
+{
+  "name": "stream-proto",
+  "version": "1.0.0",
+  "description": "_This only needs to be done if you don't already have the project on your machine_ - Open terminal - Go to your desktop   ```   cd desktop   ``` - Clone this repo to your desktop   ```   git clone https://github.comcast.com/UX-Prototype/stream-proto.git   ``` - Go into newly cloned folder   ```   cd stream-proto   ```",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bower": "^1.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "polymer build",
+    "serve:build": "polymer serve build/default",
+    "serve": "polymer serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.comcast.com/UX-Prototype/stream-proto"
+  },
+  "author": "csimek001c",
+  "license": "ISC"
+}

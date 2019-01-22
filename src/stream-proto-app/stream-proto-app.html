@@ -1,0 +1,99 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<!-- <link rel="import" href="../../bower_components/polymer/lib/utils/gestures.html"> -->
+<link rel="import" href="../../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="../components/stream-hamburger-menu/stream-hamburger-menu.html">
+<link rel="import" href="../components/stream-header/stream-header.html">
+<link rel="import" href="../views/stream-player-view/stream-player-view.html">
+
+<link rel="import" href="../views/saved/stream-for-you/stream-for-you.html">
+<link rel="import" href="../views/saved/stream-favorites/stream-favorites.html">
+<link rel="import" href="../views/saved/stream-purchases/stream-purchases.html">
+<link rel="import" href="../views/saved/stream-downloads/stream-downloads.html">
+
+<link rel="import" href="../views/live-tv/stream-all-channels/stream-all-channels.html">
+<link rel="import" href="../views/live-tv/stream-favorite-channels/stream-favorite-channels.html">
+<link rel="import" href="../views/live-tv/stream-tv-go-channels/stream-tv-go-channels.html">
+
+<link rel="import" href="../views/browse/stream-tv-shows/stream-tv-shows.html">
+
+
+<dom-module id="stream-proto-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: relative;
+      }
+
+      #hamburgerMenu {
+        pointer-events: auto;
+        z-index: 0;
+      }
+
+      #header {
+        z-index: 100;
+      }
+
+      #pageContainer {
+        /* height: 100%;
+        width: 100%; */
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+      }
+
+      #playerView {
+        top: 1000px;
+        z-index: 999;
+        background-color: transparent;
+        position: absolute;
+        transition: background-color 0.4s cubic-bezier(0.13, 0.7, 0.48, 1.01),
+                    top 0.4s cubic-bezier(0.13, 0.7, 0.48, 1.01);
+      }
+
+      #playerView[blackout-self] {
+        background-color: #000000;
+      }
+      #playerView[active] {
+        top: 0px;
+      }
+
+      #navViewsContainer {
+          height: 100vh;
+          overflow: scroll;
+          position: relative;
+      }
+      
+    </style>
+    <!-- <app-location route="{{route}}">
+    </app-location>
+    <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
+    </app-route> -->
+    <stream-hamburger-menu id="hamburgerMenu" on-click="closeMenu"></stream-hamburger-menu>
+    <div id="pageContainer">
+      <stream-header id="header"></stream-header>
+      <div id="viewsContainer">
+        <stream-player-view id="playerView"></stream-player-view>
+        <div id="navViewsContainer">
+          <stream-for-you id="forYou"></stream-for-you>
+          <stream-favorites id=favorites></stream-favorites>
+          <stream-purchases id="purchases"></stream-purchases>
+          <stream-downloads id="downloads"></stream-downloads>
+          <stream-all-channels id="allChannels"></stream-all-channels>
+          <stream-favorite-channels id="favoriteChannels"></stream-favorite-channels>
+          <stream-tv-go-channels id="tvGoChannels"></stream-tv-go-channels>
+          <stream-tv-shows id="tvShows"></stream-tv-shows>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script src="../../../vendorjs/TweenMax.min.js"></script>
+  <script src="stream-proto-app.js"></script>
+</dom-module>

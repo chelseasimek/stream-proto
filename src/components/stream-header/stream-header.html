@@ -1,0 +1,46 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../stream-icons/stream-icons.html">
+<dom-module id="stream-header">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        background-color: #303030;
+        width: 100%;
+        height: 44px;
+        pointer-events: auto;
+      }
+      #title {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+        margin-top: 14px;
+        letter-spacing: 1px;
+      }
+      .icon {
+        height: 24px;
+        width: 24px;
+        padding: 10px;
+        position: absolute;
+      }
+      #iconMenu {
+        top: 0;
+        left: 0;
+      }
+      #iconSearch {
+        top: 0;
+        right: 0;
+      }
+    </style>
+    <iron-icon class="icon" id="iconMenu" icon="stream-icons:HeaderIconLeft"></iron-icon>
+    <div id="title">[[titleText]]</div>
+    <!-- <div id="title">For You</div> -->
+    <iron-icon class="icon" id="iconSearch" icon="stream-icons:HeaderIconRight"></iron-icon>
+  </template>
+  <script src="stream-header.js">
+  </script>
+</dom-module>

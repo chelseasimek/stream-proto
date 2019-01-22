@@ -1,0 +1,15 @@
+{
+  "name": "stream-proto",
+  "description": "a container for stream app prototyping",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-icon": "^2.1.0",
+    "iron-iconset": "^2.1.1",
+    "iron-iconset-svg": "^2.2.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}

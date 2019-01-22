@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>stream-proto</title>
+  <meta name="description" content="a container for stream app prototyping">
+
+  <!-- See https://goo.gl/OOhYW5 -->
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    body {
+      margin: 0;
+      font-family: "XfinityStandard", Verdana, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+      width:100%;
+      position: fixed;
+      /* height: calc(100% - 45px);
+      top: 45px; */
+      height: 100%;
+      top: 0px;
+    }
+    html {
+      overflow: hidden;
+      width:100%;
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ThinItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ThinItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ThinItalic.ttf) format("truetype");
+      font-weight: 100;
+      font-style: italic
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLight.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLight.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLight.ttf) format("truetype");
+      font-weight: 200;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLightItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLightItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-ExtraLightItalic.ttf) format("truetype");
+      font-weight: 200;
+      font-style: italic
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Light.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Light.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Light.ttf) format("truetype");
+      font-weight: 300;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-LightItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-LightItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-LightItalic.ttf) format("truetype");
+      font-weight: 300;
+      font-style: italic
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Regular.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Regular.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Regular.ttf) format("truetype");
+      font-weight: 400;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-RegularItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-RegularItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-RegularItalic.ttf) format("truetype");
+      font-weight: 400;
+      font-style: italic
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Medium.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Medium.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Medium.ttf) format("truetype");
+      font-weight: 500;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-MediumItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-MediumItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-MediumItalic.ttf) format("truetype");
+      font-weight: 500;
+      font-style: italic
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Bold.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Bold.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-Bold.ttf) format("truetype");
+      font-weight: 700;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: XfinityStandard;
+      src: url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-BoldItalic.woff2) format("woff2"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-BoldItalic.woff) format("woff"), url(https://edge.static-assets.top.comcast.net/staticsites/fonts/latest/Xfinity_Standard/XfinityStandard-BoldItalic.ttf) format("truetype");
+      font-weight: 700;
+      font-style: italic
+    }
+  </style>
+  <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <link rel="import" href="/src/stream-proto-app/stream-proto-app.html">
+</head>
+
+<body>
+  <stream-proto-app></stream-proto-app>
+</body>
+
+</html>

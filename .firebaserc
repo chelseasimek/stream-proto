@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "stream-proto-712fd",
+    "staging": "stream-proto-d6612"
+  }
+}

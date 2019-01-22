@@ -1,0 +1,38 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../stream-icons/stream-icons.html">
+
+<dom-module id="stream-video-player">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 100%;
+        position: absolute;
+        pointer-events: auto;
+      }
+
+      #videoContainer {
+        width: 100%;
+        height: 100%;
+      }
+      #video{
+        width: 100%;
+        height: 100%;
+      }
+
+      .icon {
+        margin-top: -40px;
+      }
+      
+    </style>
+    <img id="videoContainer">
+    <!-- <video id="video" muted playsinline autoplay loop webkitallowfullscreen mozallowfullscreen mozallowfullscreen>
+      <source src="../../../images/big-buck-bunny/BigBuckBunny.mp4" type="video/mp4">
+    </video> -->
+  </template>
+  <script src="../../../vendorjs/TweenMax.min.js"></script>
+  <script src="../../../vendorjs/hammer.min.js"></script>
+  <script src="stream-video-player.js">
+  </script>
+</dom-module>

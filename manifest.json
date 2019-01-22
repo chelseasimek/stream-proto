@@ -1,0 +1,7 @@
+{
+  "name": "stream-proto",
+  "short_name": "stream-proto",
+  "description": "a container for stream app prototyping",
+  "start_url": "/",
+  "display": "standalone"
+}

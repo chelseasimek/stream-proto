@@ -1,0 +1,28 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../stream-icons/stream-icons.html">
+<dom-module id="stream-player-controls">
+  <template>
+    <style>
+      :host {
+        position: relative;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        padding: 26px;
+      }
+
+      .icon#IconPause {
+        width: 28px;
+        height: 28px;
+      }
+    </style>
+    <iron-icon class="icon" id="IconStepBack" icon="stream-icons:IconStepBack"></iron-icon>
+    <iron-icon class="icon" id="IconPause" icon="stream-icons:IconPause" on-click="pauseToggle"></iron-icon>
+    <iron-icon class="icon" id="IconStepForward" icon="stream-icons:IconStepForward"></iron-icon>
+  </template>
+  <script src="stream-player-controls.js">
+  </script>
+</dom-module>

@@ -1,0 +1,14 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/stream-proto-app/stream-proto-app.html",
+  "lint": {
+    "rules": [
+      "polymer-2"
+    ],
+    "sources": [
+      "src/**/*",
+      "images/**/**/*",
+      "vendorjs/**/*"
+    ]
+  }
+}

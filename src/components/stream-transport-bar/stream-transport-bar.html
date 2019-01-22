@@ -1,0 +1,63 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../stream-icons/stream-icons.html">
+
+<dom-module id="stream-transport-bar">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 0 8px;
+      }
+
+      #IconPlayBackControls {
+        height: 24px;
+        width: 24px;
+        padding: 12px;
+        float: right;
+        margin-top: -48px;
+      }
+
+      #bar {
+        display: inline-block;
+        width: 229px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #646A70;
+        margin: 2px 8px;
+      }
+
+      #progress {
+        width: 171px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #2B9CD8;
+      }
+
+      #scrubber {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        position: relative;
+        left: 171px;
+        top: -10px;
+      }
+
+      .time {
+        display: inline-block;
+        color: #FFFFFF;
+        font-weight: 500;
+      }
+    </style>
+    <iron-icon class="icon" id="IconPlayBackControls" icon="stream-icons:IconPlayBackControls"></iron-icon>
+    <div class="time" id="elapsed">58:32</div>
+    <div id="bar">
+      <div id="progress"></div>
+      <div id="scrubber"></div>
+    </div>
+    <div class="time" id="total">1:31:00</div>
+  </template>
+  <script src="stream-transport-bar.js">
+  </script>
+</dom-module>

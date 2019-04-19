@@ -52,20 +52,6 @@ npm run serve
   ```
 - View your application in the browser: http://localhost:8081/
 
-# Push to Cloud Foundry
-```
-npm run build
-```
-```
-cd build/default
-```
-```
-cf login -a https://api.g1.app.cloud.comcast.net
-```
-- Org: `T+P UX`
-- Space: `stream-proto`
-```
-cf push stream-proto -b https://github.com/cloudfoundry/staticfile-buildpack
 ```
 
 # Push to Firebase
